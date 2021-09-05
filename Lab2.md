@@ -66,3 +66,10 @@ void loop()
   	delay(1000);  
 ````
 
+## 實作2-3, 讓你的RGB LED燈全彩模組也可會"呼吸", LED顏色變化是否有像"呼吸的效果"和示波器的波形有什麼關連性?\
+
+### 電路圖
+![image](https://user-images.githubusercontent.com/89329121/132115177-a0dceef2-133d-4967-9da3-164142d5a803.png)
+### 程式
+
+
