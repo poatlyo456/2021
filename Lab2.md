@@ -69,60 +69,77 @@ void loop()
 ## 實作2-3, 讓你的RGB LED燈全彩模組也可會"呼吸", LED顏色變化是否有像"呼吸的效果"和示波器的波形有什麼關連性?
 
 ### 電路圖
-![image](https://user-images.githubusercontent.com/89329121/132971089-925474ad-30a8-40ae-828c-72f28cd888c5.png)
+![image](https://user-images.githubusercontent.com/89329121/132971143-7c7aac2a-918c-4184-8edc-1b57b7f671b5.png)
 
 ### 程式
 
 ````c
-// C++ code
-//
-int Red = 11;
-int Green = 10;
-int Blue = 9;
-int i = 0;
-int j = 0;
-void swapLED(int j, int i) {
-  switch (j) {
-    case 1:
-    analogWrite(Red, 0);
-    analogWrite(Green, i);
-    analogWrite(Blue, 0);
-    break;
-    case 2:
-    analogWrite(Red, 0);
-    analogWrite(Green, 0);
-    analogWrite(Blue, i);
-    break;
-    default:
-    analogWrite(Red, i);
-    analogWrite(Green, 0);
-    analogWrite(Blue, 0);
-    break;
-  }
-}
+int R = 9;
+int G = 10;
+int B = 11;
+
+int DR = 2;
+int DG = 4;
+int DB = 7;
 
 void setup()
 {
-  pinMode(Red, OUTPUT);
-  pinMode(Green, OUTPUT);
-  pinMode(Blue, OUTPUT);
+  pinMode(13, OUTPUT); // pin 13
+  
+  pinMode(R, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(B, OUTPUT);  
+  
+  pinMode(DR, OUTPUT);
+  pinMode(DG, OUTPUT);
+  pinMode(DB, OUTPUT);   
 }
 
 void loop()
 {
-  if (j > 3) {
-  	j = 0;
-  }
-  for (i = 1; i <= 255; i += 5) {
-    swapLED(j, i);
-    delay(30);
-  }
-  for (i = 255; i >= 1; i -= 5) {
-    swapLED(j, i);
-    delay(30);
-  }
-  j++;
+  // digitalWrite: 2 state (i.e., 0, 1) Only
+  digitalWrite(13, 1); // LED @ pin 13, ON
+  
+  delay(1000); 
+  
+  digitalWrite(DR, 1);
+  digitalWrite(DG, 0);
+  digitalWrite(DB, 0);
+  delay(1000);
+  digitalWrite(DR, 0);
+  digitalWrite(DG, 1);
+  digitalWrite(DB, 0);  
+  delay(1000);
+  digitalWrite(DR, 0);
+  digitalWrite(DG, 0);
+  digitalWrite(DB, 1);  
+  delay(1000);
+
+  digitalWrite(13, 0); // OFF
+  digitalWrite(DR, 0); // OFF
+  digitalWrite(DG, 0); // OFF
+  digitalWrite(DB, 0); // OFF  
+  delay(1000);
+  
+  // analogWrite: The brightness can be adjusted with 256 levels
+  for (int i = 0; i<= 255; i++)
+  {
+  	analogWrite(R, i);
+		analogWrite(G, 0);
+		analogWrite(B, 0);
+    delay(10);
+  } // from dark to bright 
+
+  for (int i = 255; i>= 0; i--)
+  {
+  	analogWrite(R, i);
+		analogWrite(G, 0);
+		analogWrite(B, 0);
+    delay(10); // 10ms = 0.01s
+  }  // from bright to dark
+  delay(1000);
 }
+
 ````
 
 
