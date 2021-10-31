@@ -1,7 +1,7 @@
 # Lab 6-2 分享一個你最喜歡的實作 (電路即可)到你的GitHub, 範列如下:
 
 ## 電路圖
-
+![image](https://user-images.githubusercontent.com/89329121/137610374-5164dd38-00f0-4acc-a8a1-484fcd723f15.png)
 ## 程式碼
 ````c
 // C++ code
