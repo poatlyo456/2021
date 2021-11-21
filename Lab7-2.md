@@ -47,3 +47,5 @@ printName('CHI','CHEN', True, 10)
 
 
 ````
+### Task5 的結果
+![image](https://user-images.githubusercontent.com/89329121/142748707-33ec20cd-ca44-4ec4-ad50-909e3f85f84c.png)
