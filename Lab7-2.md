@@ -3,7 +3,7 @@
 ### 程式
 ````python
 # task 1: string variable
-name = "CHI"
+name = "'CHI','CHEN'"
 print(name)
 
 # task 2: number variable
@@ -19,7 +19,7 @@ print(number - number)
 def printName(firstName, lastName):
   print(lastName + ' ' + firstName)
 
-printName('CHI')
+printName('CHI','CHEN')
 
 # task 4: if else
 
@@ -30,8 +30,8 @@ def printName(firstName, lastName, isCool):
     print(lastName + ' ' + firstName + ' not cool!')
 
 # Start
-printName('CHI', True)
-printName('CHI', False)
+printName('CHI','CHEN', True)
+printName('CHI','CHEN', False)
 
 # task 5: for loop
 
@@ -43,7 +43,7 @@ def printName(firstName, lastName, isCool, num):
       print(i, lastName + ' ' + firstName + ' not cool!')
 
 # Start
-printName('CHI', True, 10)
+printName('CHI','CHEN', True, 10)
 
 
 ````
